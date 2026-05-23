@@ -3,7 +3,7 @@ using namespace std;
 class teacher{
     public:
     string name;
-    void display(){
+    virtual void display(){
         cout << "Teacher Name: " << name << endl;
     }
 };
