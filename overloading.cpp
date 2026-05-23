@@ -4,10 +4,9 @@ using namespace std;
 class Number {
 public:
     double val;
-
     Number(double v) { val = v; }
-
     Number operator + (Number obj) { return Number(val + obj.val); }
+    Number operator + (Number obj) {return Number(val * obj.val);}
     Number operator - (Number obj) { return Number(val - obj.val); }
     Number operator * (Number obj) { return Number(val * obj.val); }
     Number operator / (Number obj) { return Number(val / obj.val); }
@@ -17,12 +16,12 @@ int main() {
     Number n1(10), n2(2);
 
     Number a = n1 + n2;
+    Number a2 = n1 + n2;
     Number b = n1 - n2;
     Number c = n1 * n2;
     Number d = n1 / n2;
 
-    cout << "Add: " << a.val << " | Sub: " << b.val 
-    << " | Mul: " << c.val << " | Div: " << d.val << endl;
+    cout << "Add: " << a.val << endl;
 
     return 0;
 }
