@@ -24,20 +24,32 @@ public:
     }
 
     void addFollower(int amount){
+        if(amount < 0){
+            cout << "Follower cannot be negative" << endl;
+        }
+        else{
         follower += amount;
     }
-
+}
     void addFollowing(int followingnumber){
+        if(following < 0){
+            cout << "Following cannot be negative!!" << endl;
+        }
+        else{
         following += followingnumber;
     }
-
+}
     void setPrivacy(bool privacy){
         isprivate = privacy;
     }
     void setUsername(string u){
+        if(username.empty()){
+            cout << "Username cannot be empty!!" << endl;
+        }
+        else{
         username = u;
     }
-
+}
     void setBio(string b){
         Bio = b;
     }
