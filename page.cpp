@@ -32,7 +32,7 @@ public:
     }
 }
     void addFollowing(int followingnumber){
-        if(following < 0){
+        if(followingnumber < 0){
             cout << "Following cannot be negative!!" << endl;
         }
         else{
@@ -43,7 +43,7 @@ public:
         isprivate = privacy;
     }
     void setUsername(string u){
-        if(username.empty()){
+        if(u.empty()){
             cout << "Username cannot be empty!!" << endl;
         }
         else{
