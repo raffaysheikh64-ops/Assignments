@@ -8,22 +8,14 @@ private:
     string bio;
     int post = 0;
     bool isprivate = false;
-    int  follower = 98;
-    int following = 168;
+    int  follower = 0;
+    int following = 0;
 public:
     Account(){
-        cout << "Account is Public!!" << endl;
+        cout << "Account privacy:" << isprivate << endl;
     }
 
-    void  follow(){
-        following++;
-    }
-
-    void gainfollower(){
-        follower++;
-    }
-
-    void addFollower(int amount){
+    void addFollower(int amount = 1){
         if(amount < 0){
             cout << "Follower cannot be negative" << endl;
         }
@@ -31,12 +23,12 @@ public:
         follower += amount;
     }
 }
-    void addFollowing(int followingnumber){
-        if(followingnumber < 0){
+    void addFollowing(int number = 1){
+        if(number < 0){
             cout << "Following cannot be negative!!" << endl;
         }
         else{
-        following += followingnumber;
+        following += number;
     }
 }
     void setPrivacy(bool privacy){
@@ -73,11 +65,11 @@ public:
 };
 
 int main(){
-    int  amount = 90 , number = 78;
+    
     Account A1;
     A1.setUsername("Raffaysheikh07");
-    A1.addFollower(amount);
-    A1.addFollowing(number);
+    A1.addFollower(65);
+    A1.addFollowing(32);
     A1.setPrivacy(false);
     A1.setBio("Student | BSCS | Coder\nLahore | Pakistan");
     A1.showprofile();
