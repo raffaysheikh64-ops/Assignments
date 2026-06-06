@@ -5,7 +5,7 @@ using namespace std;
 class Account{
 private:
     string username;
-    string Bio;
+    string bio;
     int post = 0;
     bool isprivate = false;
     int  follower = 98;
@@ -51,7 +51,7 @@ public:
     }
 }
     void setBio(string b){
-        Bio = b;
+        bio = b;
     }
 
     string getUsername(){
@@ -59,12 +59,12 @@ public:
     }
 
     string getBio(){
-        return Bio;
+        return bio;
     }
 
     void showprofile(){
         cout << "Username: " << username << endl;
-        cout << "Bio: " << Bio << endl;
+        cout << "Bio: " << bio << endl;
         cout << "Posts: " << post << endl;
         cout << "Following: " << following << endl;
         cout << "Followers: " << follower << endl;
