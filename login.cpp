@@ -25,7 +25,6 @@ int main(){
         cout << "Enter Password: ";
         getline(cin,password);
         if(username == name && userPassword == password){
-            cout << "Hello " << username << "!" << endl;
             loginSuccess = true;
             break;
         }
@@ -46,7 +45,6 @@ int main(){
         cout << "Enter password: ";
         getline(cin,password);
         if(userEmail == email && userPassword == password){
-            cout << "Hello " << username << "!" << endl;
             loginSuccess = true;
             break;
         }
