@@ -2,71 +2,73 @@
 #include<string>
 using namespace std;
 
-int main(){
+class Login {
+    private:
+    string username;
+    string userPassword;
+    string userEmail;
+    int maxAttempt;
+    public:
+    Login(){
+        username = "Raffaysheikh07";
+        userPassword = "Doctor strange";
+        userEmail = "raffaysheikh64@gmail.com";
+        maxAttempt = 3;
+    }
 
-    string username = "Raffaysheikh07";
-    string userPassword = "doctor strange";
-    string userEmail = "raffaysheikh64@gmail.com";
-    string password , name, email;
-    int choice, attempt = 0;
-    bool loginSuccess = false;
+    bool authenticate(){
+        int choice, attempt = 0;
+        string inputID, inputPassword;
+        cout << "Enter your choice:" << endl;
+        cout << "1.Login by username." << endl;
+        cout << "2.Login by Email." << endl;
+        cin >> choice;
+        cin.ignore();
 
-    cout << "Enter your choice: " << endl;
-    cout << "1.Login through username." << endl;
-    cout << "2.Login through Email." << endl;
-    cin >> choice;
-    cin.ignore();
+        if(choice != 1 && choice != 2){
+            cout << "Invalid Choice!!" << endl;
+            return false;
+        }
+        
+        while (attempt < maxAttempt){
+            if(choice == 1){
+                cout << "Enter username: ";
+            }else{
+                cout << "Enter Email: ";
+            }
+        
+        getline(cin,inputID);
 
-    switch(choice){
-    case 1:
-    while(attempt < 3){
-        cout << "enter name: ";
-        getline(cin,name);
         cout << "Enter Password: ";
-        getline(cin,password);
-        if(username == name && userPassword == password){
-            loginSuccess = true;
-            break;
+        getline(cin,inputPassword);
+
+        if(choice == 1 && inputID == username && inputPassword == userPassword){
+            return true;
+        }
+    else if(choice == 2 && inputID == userEmail  && inputPassword == userPassword){
+            return true;
         }
         else{
-            cout << "Wrong username and password!! try again" << endl;
             attempt++;
-        }
-        
-    }
-
-    break;
-
-    case 2:
-    while(attempt < 3){
-        
-        cout << "Enter Email: ";
-        getline(cin,email);
-        cout << "Enter password: ";
-        getline(cin,password);
-        if(userEmail == email && userPassword == password){
-            loginSuccess = true;
-            break;
-        }
-        else{
-            cout << "Wrong username and password!! try again" << endl;
-            attempt++;
+            cout << "Wrong details are given, try again!! Attempt left: " << maxAttempt - attempt << endl;
         }
     }
-    break;
-    
-    default:
-    cout << "Invalid Choice!!" << endl;
-    return 1;
+    return false;
+
+    }
+};
+    int main(){
+
+        Login user1;
+        if(user1.authenticate()){
+            cout << "Login successful!! Welcome Back." << endl;
+        }else {
+            cout << "Account locked. Too many incorrect attempts!!" << endl;
+        }
+
+        return 0;
     }
 
-if(loginSuccess){
-    cout << "Login sucessfull!! Hello " << username << endl;
-}
-else{
-    cout << "Account locked. Too many incorrect attempts." << endl;
-}
 
-return 0;
 
-}
+
