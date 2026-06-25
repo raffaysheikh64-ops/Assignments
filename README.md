@@ -14,7 +14,7 @@ The files in this repository are organized by the specific OOP pillars and progr
 * **Problem Solved:** Moving sensitive system properties (like user credentials and retry maximums) out of the global scope and safely hiding them inside self-contained objects. Resolves terminal buffer vulnerabilities by standardizing input sequences inside member methods.
 
 ### 2. Inheritance & Class Hierarchies (Upcoming / In Progress)
-* **Focus Files:** `UserManagement.cpp`, `BankingSystem.cpp`
+* **Focus Files:** `inheritance.cpp`.
 * **Core Concepts:** Base vs. Derived classes, access control (`protected`), and code reusability.
 * **Problem Solved:** Eliminating duplicate code blocks (DRY principle) by creating generic parent frameworks (e.g., a baseline `User` account) and extending them into specific domain models (e.g., `Student` or `Teacher` tiers).
 
